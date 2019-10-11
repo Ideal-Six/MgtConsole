@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-console',
@@ -8,11 +9,23 @@ import { Observable } from 'rxjs';
 })
 export class ConsoleComponent implements OnInit {
 
-  constructor() { 
-      
+  items: Observable<any[]>;
+
+  constructor(public db: AngularFireDatabase) { 
+    this.items = db.list('/minuwangoda').valueChanges();
+    
   }
 
   ngOnInit() {
+    this.items.forEach(element => {
+      // console.log(element);
+      element.forEach(data => {
+        console.log(data);
+      });
+    });    
+  }
+
+  showItems(){
     
   }
 
