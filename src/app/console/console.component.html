@@ -1,6 +1,56 @@
-<h1>console works!</h1>
 
-<h2>Content from Firebase</h2>
-  <div class="col-md-3">
-    <pre *ngFor="let item of items | async">{{item}}</pre>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-2">
+              <div id="mySidenav" class="sidenav">
+                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                      <a href="#">About</a>
+                      <a href="#">Services</a>
+                      <a href="#">Clients</a>
+                      <a href="#">Contact</a>
+              </div>
+              <div id="main">
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+              </div>
+      </div>
+
+      <div id="taxi-div" class="col-md-10">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>
+                  Name
+              </th>
+              <th>
+                complete
+              </th>
+              <th>
+                latitude
+              </th>
+              <th>
+                longitude
+              </th>
+              <th>
+                provider
+              </th>
+              <th>
+                speed
+              </th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let taxi of taxis">
+              <td>{{taxi.name}}</td>
+              <td>{{taxi.complete}}</td>
+              <td>{{taxi.latitude}}</td>
+              <td>{{taxi.longitude}}</td>
+              <td>{{taxi.provider}}</td>
+              <td>{{taxi.speed}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
 </div>
+
+
