@@ -1,0 +1,9 @@
+<p>console-minu works!</p>
+
+<!-- <div *ngFor="let item of complainItems" >
+    <p>{{item.compl}}</p>
+</div> -->
+<div class="col-md-3">
+    <pre *ngFor="let item of complainItems | async">{{item.compl}}</pre>
+ </div>
+
