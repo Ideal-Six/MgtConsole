@@ -7,7 +7,7 @@ import { ConsoleComponent } from './console/console.component';
 
 const routes: Routes = [
   // { path: '', component: AppComponent },
-  { path: 'console', component: ConsoleComponent } 
+  { path: 'console', component: ConsoleComponent }
 ];
 
 @NgModule({
